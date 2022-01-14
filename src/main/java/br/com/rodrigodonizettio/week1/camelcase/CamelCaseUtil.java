@@ -7,10 +7,10 @@ public class CamelCaseUtil {
     private static final Logger log = LogManager.getLogger(CamelCaseUtil.class);
 
     public static void convertToStringList(String input) {
-        if(!input.isBlank()) {
-            log.info("Not null!");
+        if(input.isBlank()) {
+            throw new IllegalArgumentException("String is Blank!");
         } else {
-            log.info("Null!");
+            log.info("Not Blank!");
         }
     }
 }
