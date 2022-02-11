@@ -7,6 +7,7 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class CamelCaseUtil {
+    private CamelCaseUtil() { }
 
     public static List<String> convertToStringList(String input) {
         performThrowableExceptionsValidations(input);
