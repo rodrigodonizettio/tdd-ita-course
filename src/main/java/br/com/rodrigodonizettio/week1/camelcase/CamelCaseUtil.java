@@ -1,8 +1,5 @@
 package br.com.rodrigodonizettio.week1.camelcase;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -10,7 +7,6 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class CamelCaseUtil {
-    private static final Logger log = LogManager.getLogger(CamelCaseUtil.class);
 
     public static List<String> convertToStringList(String input) {
         performThrowableExceptionsValidations(input);
