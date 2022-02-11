@@ -13,11 +13,11 @@ public class MyStack extends Stack<Integer> {
     }
 
 
-    public boolean isEmpty() {
+    public synchronized boolean isEmpty() {
         return super.isEmpty();
     }
 
-    public int size() {
+    public synchronized int size() {
         return super.size();
     }
 
@@ -29,7 +29,7 @@ public class MyStack extends Stack<Integer> {
         return object;
     }
 
-    public Integer pop() {
+    public synchronized Integer pop() {
         return super.pop();
     }
 
