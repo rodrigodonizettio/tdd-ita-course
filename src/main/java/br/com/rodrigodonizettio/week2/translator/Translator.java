@@ -20,7 +20,7 @@ public class Translator {
         try {
             translatorMap = objectMapper.readValue(Paths.get("src/main/resources/translator.json").toFile(), Map.class);
         } catch (IOException e) {
-            log.error("Message: " + e.getMessage() + ". Cause: " + e.getCause());
+            log.error(String.format("Message: %s with Cause: %s", e.getMessage(), e.getCause()));
         }
     }
 
