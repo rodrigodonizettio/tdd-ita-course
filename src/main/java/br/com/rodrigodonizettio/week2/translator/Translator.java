@@ -14,7 +14,7 @@ public class Translator {
     private static final Logger log = LogManager.getLogger(Translator.class);
 
     private final ObjectMapper objectMapper = new ObjectMapper();
-    private Map<String, String> translatorMap = new HashMap();
+    private Map<String, String> translatorMap = new HashMap<>();
 
     public Translator() {
         try {
