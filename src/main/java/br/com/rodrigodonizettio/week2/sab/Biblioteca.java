@@ -2,6 +2,7 @@ package br.com.rodrigodonizettio.week2.sab;
 
 public class Biblioteca {
     /***
+     * This class (Library) belongs to SAB/Sistema de Automação em Bibliotecas (LAS/Library Automation System)
      * The below code is for exercise purpose only. This way its dependencies weren't imported.
      ***/
 
