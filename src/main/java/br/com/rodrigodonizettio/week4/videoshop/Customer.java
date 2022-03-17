@@ -24,7 +24,7 @@ public class Customer {
     }
 
     public String statement() {
-        Enumeration rentals = this.rentals.elements();
+        Enumeration<Rental> currentRentals = this.rentals.elements();
         String result = "Rental Record for " + getName() + "\n";
         while (rentals.hasMoreElements()) {
             Rental each = (Rental) rentals.nextElement();
