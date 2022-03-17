@@ -1,5 +1,6 @@
 package br.com.rodrigodonizettio.week4.videoshop;
 
+import br.com.rodrigodonizettio.week4.videoshop.movie.Movie;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -89,7 +90,7 @@ public class CustomerTest {
     }
 
     private void rentMovie(String title, int type, int days) {
-        Movie movie = new Movie(title, type);
+        Movie movie = Movie.createMovie(title, type);
         Rental rental = new Rental(movie, days);
 
         client.addRental(rental);
