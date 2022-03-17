@@ -1,57 +1,36 @@
-package br.com.rodrigodonizettio.week4.videoshop;
+package br.com.rodrigodonizettio.week4.videoshop.movie;
 
-public class Movie {
+public abstract class Movie {
     public static final int CHILDREN = 2;
     public static final int REGULAR = 0;
     public static final int NEW_RELEASE = -1;
 
     private String title;
-    private int priceCode;
 
     public static Movie createMovie(String title, int priceCode) {
-        return new Movie(title, priceCode);
+        if(priceCode == REGULAR) {
+            return new Regular(title);
+        }
+        if(priceCode == NEW_RELEASE) {
+            return new NewRelease(title);
+        }
+        if(priceCode == CHILDREN) {
+            return new Children(title);
+        }
+        throw new RuntimeException(String.format("The priceCode %d doesn't exist!", priceCode));
     }
 
-    public Movie(String title, int priceCode) {
+    public Movie(String title) {
         this.title = title;
-        this.priceCode = priceCode;
-    }
-
-    public int getPriceCode() {
-        return priceCode;
-    }
-
-    public void setPriceCode(int priceCode) {
-        this.priceCode = priceCode;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public double getAmount(int daysRented) {
-        double thisAmount = 0;
-        switch (getPriceCode()) {
-            case Movie.REGULAR:
-                thisAmount += 2;
-                if(daysRented > 2)
-                    thisAmount += (daysRented - 2) * 1.5;
-                break;
-            case Movie.NEW_RELEASE:
-                thisAmount += daysRented * 3;
-                break;
-            case Movie.CHILDREN:
-                thisAmount += 1.5;
-                if(daysRented > 3)
-                    thisAmount += (daysRented - 3) * 1.5;
-                break;
-        }
-        return thisAmount;
-    }
+    public abstract double getAmount(int daysRented);
 
     public int getFrequentRenterPoints(int daysRented) {
-        if((getPriceCode() == Movie.NEW_RELEASE) && daysRented > 1)
-            return 2;
         return 1;
     }
 }
