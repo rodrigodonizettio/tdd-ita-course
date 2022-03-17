@@ -25,16 +25,15 @@ public class Customer {
 
     public String statement() {
         Enumeration<Rental> currentRentals = this.rentals.elements();
-        String result = "Rental Record for " + getName() + "\n";
-        while (rentals.hasMoreElements()) {
-            Rental each = (Rental) rentals.nextElement();
-            result += "\t" + each.getMovie().getTitle() + "\t"
-                    + each.getAmount() + "\n";
+        StringBuilder result = new StringBuilder();
+        result.append("Rental Record for ").append(getName()).append("\n");
+        while (currentRentals.hasMoreElements()) {
+            Rental each = currentRentals.nextElement();
+            result.append("\t").append(each.getMovie().getTitle()).append("\t").append(each.getAmount()).append("\n");
         }
-        result += "Amount owed is " + getTotalAmount() + "\n";
-        result += "You earned " + getTotalFrequentRenterPoints()
-                + " frequent renter points";
-        return result;
+        result.append("Amount owed is ").append(getTotalAmount()).append("\n").append("You earned ")
+                .append(getTotalFrequentRenterPoints()).append(" frequent renter points");
+        return result.toString();
     }
 
     public int getTotalFrequentRenterPoints() {
