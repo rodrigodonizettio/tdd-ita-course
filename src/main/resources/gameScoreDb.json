@@ -1,0 +1,33 @@
+[ {
+  "name" : "guerra",
+  "scoreMap" : {
+    "A" : 1,
+    "B" : 1,
+    "X" : 1,
+    "Y" : 1
+  }
+}, {
+  "name" : "doni",
+  "scoreMap" : {
+    "A" : 2,
+    "B" : 10,
+    "X" : 2,
+    "Y" : 2
+  }
+}, {
+  "name" : "ze",
+  "scoreMap" : {
+    "A" : 0,
+    "B" : 0,
+    "X" : 0,
+    "Y" : 0
+  }
+}, {
+  "name" : "tti",
+  "scoreMap" : {
+    "A" : 0,
+    "B" : 3,
+    "X" : 0,
+    "Y" : 0
+  }
+} ]
