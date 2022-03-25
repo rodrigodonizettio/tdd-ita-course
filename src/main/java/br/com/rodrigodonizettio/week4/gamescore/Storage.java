@@ -80,7 +80,7 @@ public class Storage {
     private List<Player> sortDescendingByScorePoint(List<Player> allValid, String pointType) {
         return allValid.stream()
                 .sorted((o1, o2) -> {
-                    if(o1.getScoreMap().get(pointType) == o2.getScoreMap().get(pointType))
+                    if(o1.getScoreMap().get(pointType).equals(o2.getScoreMap().get(pointType)))
                         return o1.getName().compareTo(o2.getName());
                     else if(o1.getScoreMap().get(pointType) > o2.getScoreMap().get(pointType))
                         return -1;
