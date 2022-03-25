@@ -54,7 +54,6 @@ public class Storage {
         Map<String, Integer> scoreMap = player.getScoreMap();
         scoreMap.replace(pointType, newScore);
 
-        ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.writerWithDefaultPrettyPrinter().writeValue(Paths.get(datasourcePath).toFile(), gameScoreDb);
 
         return player;
